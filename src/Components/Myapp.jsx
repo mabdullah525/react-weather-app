@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Myapp = () => {
+    const [search, setSearch] = useState()
     const API_KEY = "fb382d97a303702e873d8c53346002db"
     const API = "https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}"
+
+    const handleInput = (e) => {
+
+    }
     return (
         <>
             <div className="header">
@@ -13,6 +18,7 @@ const Myapp = () => {
                         <input
                             type="text"
                             placeholder="Enter City, Country"
+                            onChange={handleInput}
                         />
                         <button>
                             <i className="fa-solid fa-magnifying-glass"></i>
