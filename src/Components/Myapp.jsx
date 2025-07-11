@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 
 const Myapp = () => {
-    const [search, setSearch] = useState()
+    const [search, setSearch] = useState();
+    const [data, setData] = useState();
     const API_KEY = "fb382d97a303702e873d8c53346002db"
     const API = "https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}"
 
@@ -11,9 +12,13 @@ const Myapp = () => {
 
     }
     const myFun = async () => {
-        const get = await fetch(`https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}`)
+        const get = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${"lahore"}&appid=${API_KEY}`);
+        const jsonData = await get.json();
+        console.log(jsonData);
+        setData(jsonData);
 
     }
+    myFun()
     return (
         <>
             <div className="header">
