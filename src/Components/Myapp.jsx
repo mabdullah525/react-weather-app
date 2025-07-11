@@ -6,6 +6,12 @@ const Myapp = () => {
     const API = "https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}"
 
     const handleInput = (e) => {
+        setSearch(e.target.value)
+        console.log(search)
+
+    }
+    const myFun = async () => {
+        const get = await fetch(`https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}`)
 
     }
     return (
