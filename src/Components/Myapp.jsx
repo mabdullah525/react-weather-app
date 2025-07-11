@@ -2,7 +2,18 @@ import React from 'react'
 
 const Myapp = () => {
   return (
-    <div>Myapp</div>
+    <>
+    <div className='container'>
+        <div className='input'>
+            <input type="text" placeholder='Enter City, Countary' />
+
+        </div>
+
+    </div>
+    
+    
+    
+    </>
   )
 }
 
