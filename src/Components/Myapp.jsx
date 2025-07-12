@@ -45,7 +45,7 @@ const Myapp = () => {
                             data && data.weather ?
                             <div>
                                 <h2>{data.name}</h2>
-                                <h2>{data.main.temp}</h2>
+                                <h2>{Math.trunc(data.main.temp)}°C</h2>
                                 <p>{data.weather[0].description}</p>
                             </div> : ""
                                 
