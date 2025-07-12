@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 
 const Myapp = () => {
-    const [search, setSearch] = useState();
+    const [search, setSearch] = useState("");
     const [data, setData] = useState();
+    const [error, setError] = useState("");
+    
     const API_KEY = "fb382d97a303702e873d8c53346002db"
     const API = "https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}"
 
@@ -16,6 +18,9 @@ const Myapp = () => {
         const jsonData = await get.json();
         console.log(jsonData);
         setData(jsonData);
+        if (search === "") {
+            alert("Enter Name");
+        }
 
     }
     return (
