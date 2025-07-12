@@ -12,13 +12,12 @@ const Myapp = () => {
 
     }
     const myFun = async () => {
-        const get = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${"lahore"}&appid=${API_KEY}`);
+        const get = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${API_KEY}`);
         const jsonData = await get.json();
         console.log(jsonData);
         setData(jsonData);
 
     }
-    myFun()
     return (
         <>
             <div className="header">
@@ -31,7 +30,7 @@ const Myapp = () => {
                             placeholder="Enter City, Country"
                             onChange={handleInput}
                         />
-                        <button>
+                        <button onClick={myFun} >
                             <i className="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </div>
