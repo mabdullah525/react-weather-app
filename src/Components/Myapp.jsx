@@ -14,7 +14,7 @@ const Myapp = () => {
 
     }
     const myFun = async () => {
-        const get = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${API_KEY}`);
+        const get = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${API_KEY}&units=metric`);
         const jsonData = await get.json();
         console.log(jsonData);
         setData(jsonData);
@@ -27,7 +27,7 @@ const Myapp = () => {
         <>
             <div className="header">
                 <div className="box">
-                    <h2>Search Weather</h2>
+                    <h1>Search Weather</h1>
 
                     <div className="flex items-center gap-2">
                         <input
@@ -41,8 +41,16 @@ const Myapp = () => {
                     </div>
 
                     <div className="mt-6 text-white text-center italic">
-                        {/* Future search result or info will be placed here */}
-                        Search for any city worldwide to get weather info.
+                        {
+                            data && data.weather ?
+                            <div>
+                                <h2>{data.name}</h2>
+                                <h2>{data.main.temp}</h2>
+                                <p>{data.weather[0].description}</p>
+                            </div> : ""
+                                
+                        }
+                        
                     </div>
                 </div>
             </div>
