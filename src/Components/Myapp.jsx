@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
-
+import clouds from "../Images/clouds.png"
+import clear from "../Images/Clear.png"
+import rain from "../Images/Rain.png"
+import error from "../Images/error.png"
+import mist from "../Images/mist.png"
 const Myapp = () => {
     const [search, setSearch] = useState("");
     const [data, setData] = useState();
